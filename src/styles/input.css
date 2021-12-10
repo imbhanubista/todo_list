@@ -1,0 +1,24 @@
+.deletebutton{
+    border:3px solid #404244;
+    padding-left: 6px;
+    padding-right: 6px; 
+    border-radius: 7px;  
+}
+#checkbox{
+    padding: 2px;
+}
+
+.strike{
+    text-decoration:line-through;
+}
+.main-header{
+
+}
+.container{
+    text-align: center;
+    
+}
+.container>img{
+    height: 30vh;
+    
+}
