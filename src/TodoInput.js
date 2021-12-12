@@ -63,14 +63,13 @@ const TodoInput =()=>{
         setList(newList)
     }
 
-
     return(
         <>
         <div className="container">
             <img className="main-header" src={Check} />
             <form>
             <input type="text" placeholder="Add your items" value={input} id="inputfield" onChange={inputHandler}  />
-            <button onClick={buttonHandler}> + </button>
+            <button onClick={buttonHandler} > + </button>
         </form>
       
        {list.map((data,index)=>{

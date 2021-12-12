@@ -1,24 +1,37 @@
 .deletebutton{
-    border:3px solid #404244;
-    padding-left: 6px;
-    padding-right: 6px; 
-    border-radius: 7px;  
+    /* border:3px solid #404244; */
+    outline: none;
+    padding: 12px; 
+    /* border-radius: 7px;   */
+}
+.deletebutton:hover{
+    background-color: rgb(219, 146, 146);
 }
 #checkbox{
-    padding: 2px;
+    padding: 10px;
 }
 
 .strike{
     text-decoration:line-through;
 }
-.main-header{
 
-}
 .container{
     text-align: center;
-    
 }
 .container>img{
-    height: 30vh;
+    height: 25vh;
+    margin-top: 50px;
+    margin-bottom: 10px;
     
+}
+input{
+    border:none;
+    outline: none;
+    border-radius: 5px;
+    border-bottom: 2px solid #1ecc2d;
+}
+input::placeholder{
+    color:#e0ddee;
+    text-align: center;
+    font-size: large;
 }
