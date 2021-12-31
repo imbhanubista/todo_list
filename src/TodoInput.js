@@ -1,12 +1,14 @@
 import {useEffect, useState} from 'react'
 import DeleteCompo from './DeleteCompo'
-import Check from './image/checkmark.webp'
 const TodoInput =()=>{
 
     const [input, setInput] = useState("")
     const [list, setList] = useState([])
 
-
+//for edit button to store index
+const [editIndex, setEditIndex] = useState(0)
+//is data is truly editng or ?
+const [isEditing,setIsEditing] = useState(false)
     //Local Storage bata data liyeko
     useEffect(()=>{
         let localItem = localStorage.getItem("todoListWithUseEffect")
@@ -62,29 +64,59 @@ const TodoInput =()=>{
 
         setList(newList)
     }
+    
+const editHandler=(index)=>{
+    let currentData = list[index]
+    setInput(currentData.text)
+    // console.log(currentData)
+    setEditIndex(index)
+    setIsEditing(true)
+}
+const updateHandler = (e)=>{
+    e.preventDefault()
+    const currentData = [...list]
+    currentData[editIndex] = {...currentData[editIndex],text : input}
+    setList(currentData)
+    setIsEditing(false)
+    setInput("")
+}
+
 
     return(
         <>
-        <div className="container">
-            <img className="main-header" src={Check} />
+        <div className="main-div">
+            {/* <div className="center-div">  */}
+            <h1>Todo List</h1>
+    <br />
             <form>
             <input type="text" placeholder="Add your items" value={input} id="inputfield" onChange={inputHandler}  />
-            <button onClick={buttonHandler} > + </button>
+{
+            isEditing? <button className='inputAdd' onClick={updateHandler}>Update</button>:
+            <button onClick={buttonHandler} className="inputAdd" > + </button>
+            
+}
         </form>
-      
+        
        {list.map((data,index)=>{
            return(
-               <>
-            <DeleteCompo data={data}
+              
+          <div key={index}>
+                <DeleteCompo data={data}
             index={index}
             deleteHandler={deleteHandler}
             handleComplete ={handleComplete}
+            editHandler = {editHandler}
             />
+            </div>
             
-               </>
+            
+               
            )
        })}
-         </div>
+       
+            </div>
+            
+         {/* </div> */}
         </>
     )
 }

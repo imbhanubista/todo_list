@@ -1,11 +1,51 @@
-.deletebutton{
-    /* border:3px solid #404244; */
+/* .main-div{
+    width: 100%;
+    height: 100vh;
+    background-color:#52595D ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  } */
+
+  .main-div{
+      text-align: center;
+  }
+  
+  /* .center-div{
+    width: 30%;
+    height: 80vh;
+    background-color: #f4f4f4;
+    box-shadow: 5px 5px 25px -5px rgba(0, 0, 0, 1) ;
+    border-radius: 20px;
+  } */
+  
+  h1{
+    background-color: slateblue;
+    text-align: center;
+    color: #f4f4f4;
+    padding: 6px 0 2px 0;
+    margin-bottom: 10px;
+    box-shadow: 5px 5px 15px -6px rgba(0, 0, 0, 0.5);
+  
+  }
+
+  .deletebutton{
+    border-radius: 40%;
+    border-color: transparent;
+    background-color: #3b3741;
+    color: #f4f4f4;
+    font-size: 15px;
+    border: none;
     outline: none;
-    padding: 12px; 
-    /* border-radius: 7px;   */
+    padding: 3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
 .deletebutton:hover{
-    background-color: rgb(219, 146, 146);
+    background-color: rgb(199, 30, 30);
 }
 #checkbox{
     padding: 10px;
@@ -14,24 +54,44 @@
 .strike{
     text-decoration:line-through;
 }
-
-.container{
-    text-align: center;
-}
-.container>img{
-    height: 25vh;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    
-}
 input{
-    border:none;
-    outline: none;
-    border-radius: 5px;
-    border-bottom: 2px solid #1ecc2d;
-}
-input::placeholder{
-    color:#e0ddee;
+    outline: 0;
+    border-width: 0 0 3px;
+    border-color: blueviolet;
     text-align: center;
-    font-size: large;
+    height: 30px;
+    background: transparent;
+    top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    /* width: 60%; */
+  }
+  input:focus{
+    border-color: chartreuse;
+  }
+
+.inputAdd{
+    min-height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: #8566aa;
+    color: #f4f4f4;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
 }
+.inputAdd:hover{
+    background-color: green;
+  }
+ 
+  p{
+      text-align: center;
+      margin-top: 3px;
+      font-size: large;
+      font-weight: 500;
+      color: darkslategray;
+  }
+  
