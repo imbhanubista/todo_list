@@ -1,6 +1,11 @@
 import {useEffect, useState} from 'react'
 import DeleteCompo from './DeleteCompo'
+import {useTranslation} from 'react-i18next'
+
 const TodoInput =()=>{
+
+    //language translation
+    const {t, i18n} = useTranslation()
 
     const [input, setInput] = useState("")
     const [list, setList] = useState([])
@@ -81,15 +86,26 @@ const updateHandler = (e)=>{
     setInput("")
 }
 
+const npBtn=(e)=>{
+    if(e.target.value!==""){
+        i18n.changeLanguage(e.target.value)
+    }
+}
 
     return(
         <>
         <div className="main-div">
             {/* <div className="center-div">  */}
-            <h1>Todo List</h1>
+            <h1> {t("Todo List")} </h1> <span>
+                <select onChange={npBtn} defaultValue={""}>
+                    <option disabled value="">Language</option>
+                    <option value={"np"} >Nepali</option>
+                    <option value={"en"}>English</option>
+                </select>
+            </span>
     <br />
             <form>
-            <input type="text" placeholder="Add your items" value={input} id="inputfield" onChange={inputHandler}  />
+            <input type="text" placeholder={t("Add your items")} value={input} id="inputfield" onChange={inputHandler}  />
 {
             isEditing? <button className='inputAdd' onClick={updateHandler}>Update</button>:
             <button onClick={buttonHandler} className="inputAdd" > + </button>
